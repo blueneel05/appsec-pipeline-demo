@@ -1,0 +1,34 @@
+# ── Sensitive config (contains API keys & passwords) ──────────
+config.yaml
+
+# ── Scan output reports ────────────────────────────────────────
+reports/
+*.json
+
+# ── Cloned source code directory ──────────────────────────────
+source_code/
+
+# ── Python ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+.venv/
+env/
+
+# ── macOS ─────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+
+# ── Windows ───────────────────────────────────────────────────
+Thumbs.db
+desktop.ini
+
+# ── IDE ───────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp

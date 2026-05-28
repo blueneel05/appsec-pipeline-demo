@@ -1,0 +1,42 @@
+# ─────────────────────────────────────────────────────────────
+# Checkmarx One CI/CD Pipeline — Configuration File
+# ─────────────────────────────────────────────────────────────
+# Copy this file, fill in your values, and pass it to the script:
+#   python cx_scan_pipeline.py --config config.yaml
+# ─────────────────────────────────────────────────────────────
+
+# ── Source Code Repository ─────────────────────────────────────
+repository:
+  url: "https://github.com/<your-username>/<your-repo>.git"
+  local_path: "source_code"               # Directory to clone into
+
+# ── Checkmarx One Settings ─────────────────────────────────────
+checkmarx:
+  server_url:    "https://eu.ast.checkmarx.net"
+  api_key:       "YOUR_CX_API_KEY_HERE"   # Generate in CxOne → Access Management → API Keys
+  project_name:  "PS-Engineer-Assignment"
+  group:         "YOUR_GROUP_NAME"        # The group you are a member of in CxOne
+  branch:        "main"
+
+  # Path to cx CLI binary.
+  # Set to "auto" to search PATH, or provide the full path e.g.:
+  #   macOS  : "/usr/local/bin/cx"
+  #   Windows: "C:\\tools\\cx.exe"
+  cx_cli_path:   "auto"
+
+# ── Email Settings ─────────────────────────────────────────────
+email:
+  sender:    "scanner@yourdomain.com"
+  recipients:
+    - "security@yourdomain.com"
+    - "devops@yourdomain.com"
+    # Add as many recipients as needed
+
+  smtp_host: "smtp.gmail.com"             # Change to your SMTP provider
+  smtp_port: 587                          # 587 = STARTTLS, 465 = SSL, 25 = plain
+  username:  "your_email@gmail.com"       # SMTP login (leave blank if not needed)
+  password:  "your_app_password"          # For Gmail: use App Password, not account password
+                                          # See: https://myaccount.google.com/apppasswords
+
+# ── Report Output ──────────────────────────────────────────────
+report_dir: "reports"                     # Directory where JSON reports are saved

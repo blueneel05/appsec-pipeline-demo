@@ -128,7 +128,7 @@ def run_cx_scan(cx_cli: str, config: dict, source_dir: str, report_dir: str) -> 
         cx_cli, "scan", "create",
         "--project-name",  cx_cfg["project_name"],
         "--branch",        cx_cfg.get("branch", "main"),
-        "--group",         cx_cfg["group"],
+        #"--group",         cx_cfg["group"], -- group name was not available in the dashboard, so removed it from the scan command. It can be set in the CxOne UI when creating the project.
         "-s",              source_dir,
         "--scan-types",    "sast",
         "--report-format", "json",
@@ -141,7 +141,7 @@ def run_cx_scan(cx_cli: str, config: dict, source_dir: str, report_dir: str) -> 
 
     print(f"\n[INFO]  Initiating Checkmarx One scan...")
     print(f"        Project : {cx_cfg['project_name']}")
-    print(f"        Group   : {cx_cfg['group']}")
+    # print(f"        Group   : {cx_cfg['group']}")
     print(f"        Branch  : {cx_cfg.get('branch', 'main')}")
     print(f"        Server  : {cx_cfg['server_url']}\n")
 

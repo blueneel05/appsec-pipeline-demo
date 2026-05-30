@@ -32,3 +32,10 @@ desktop.ini
 .vscode/
 .idea/
 *.swp
+
+# ── Scan output reports ────────────────────────────────────────
+reports/
+*.json
+
+# ── Cloned source code directory ──────────────────────────────
+source_code/
